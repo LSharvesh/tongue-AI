@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tongue Health Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<h2>Tongue Health Analyzer</h2>
+
+<form method="POST" enctype="multipart/form-data">
+    <input type="text" name="name" placeholder="Name" required>
+    <input type="number" name="age" placeholder="Age" required>
+    <textarea name="symptoms" placeholder="Symptoms" required></textarea>
+    <input type="file" name="image" accept=".bmp,.jpg,.jpeg,.png,.webp" required>
+    <button type="submit">Analyze</button>
+</form>
+
+{% if error %}
+    <p class="error">{{ error }}</p>
+{% endif %}
+
+{% if report %}
+    <h3>AI Report</h3>
+    <pre>{{ report }}</pre>
+{% endif %}
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
