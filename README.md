@@ -1,130 +1,52 @@
-# Tongue-AI 👅🧠
+# Tongue AI - Medical Image Analysis
 
-Tongue-AI is a **simple deep learning–based tongue image segmentation project** built using **UNet**. The project takes a tongue image as input and generates a segmented tongue mask through a trained model. A lightweight **Flask web app** is used for uploading images and viewing results.
+A web application for analyzing tongue images using deep learning segmentation and computer vision techniques to provide health insights.
 
-> ⚠️ This project is for **learning, research, and demonstration purposes only**. It is **not** intended for medical diagnosis.
+## Technologies Used
 
----
+### Deep Learning & AI
+- **U-Net** - Convolutional neural network for tongue image segmentation
+- **PyTorch** - Deep learning framework for model training and inference
+- **OpenAI Vision API** (optional) - AI-powered image analysis
 
-## ✨ What This Project Does
+### Computer Vision & Image Processing
+- **OpenCV** - Image processing, color space conversion, edge detection, and texture analysis
+- **NumPy** - Numerical operations for color and texture analysis
+- **Pillow** - Image handling and format conversion
 
-* Upload a tongue image via a web interface
-* Run **UNet-based segmentation** on the image
-* Generate and save segmented output
-* Display original and segmented images
+### Web Framework
+- **Flask** - Python web framework for the application backend
 
----
+### Key Features
+- **Image Segmentation** - U-Net model isolates tongue region from background
+- **Color Analysis** - RGB/HSV analysis for coating, redness, and color variations
+- **Texture Analysis** - Variance-based detection of dryness and surface irregularities
+- **Edge Detection** - Canny edge detection for crack and fissure identification
+- **Health Insights** - Automated analysis of tongue characteristics with recommendations
 
-## 🧠 Model Used
+## Setup
 
-* **Architecture:** UNet
-* **Task:** Image Segmentation
-* **Framework:** PyTorch
-* **Trained Model:** `model/tongue_unet.pth`
-
----
-
-## 📂 Project Structure
-
-```
-TONGUE-AI/
-│── ai/
-│   └── image_analyzer.py
-│
-│── data/
-│   ├── dataset/
-│   └── groundtruth/
-│       ├── images/
-│       └── mask/
-│
-│── model/
-│   └── tongue_unet.pth
-│
-│── segmentation/
-│   └── predict.py
-│
-│── training/
-│   ├── dataset_loader.py
-│   ├── train.py
-│   └── unet.py
-│
-│── templates/
-│   └── index.html
-│
-│── static/
-│   ├── css/style.css
-│   └── js/script.js
-│
-│── uploads/
-│   ├── original/
-│   └── segmented/
-│
-│── app.py
-│── requirements.txt
-│── .gitignore
-│── venv/
-```
-
----
-
-## ⚙️ Installation
-
-1. Clone the repository
-
-```bash
-git clone https://github.com/your-username/tongue-ai.git
-cd tongue-ai
-```
-
-2. Create and activate virtual environment
-
-```bash
-python -m venv venv
-source venv/bin/activate   # Windows: venv\Scripts\activate
-```
-
-3. Install dependencies
-
+1. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
----
-
-## ▶️ Run the Application
-
-```bash
-python app.py
-```
-
-Then open your browser and go to:
-
-```
-http://127.0.0.1:5000
-```
-
----
-
-## 🧪 Training (Optional)
-
-If you want to train the model again:
-
+2. Train the segmentation model (optional if model already exists):
 ```bash
 python training/train.py
 ```
 
-Make sure your dataset and ground truth masks are placed correctly inside `data/`.
+3. Run the application:
+```bash
+python app.py
+```
 
----
+## Usage
 
-## 📥 Input & Output
+Upload a tongue image through the web interface. The system will:
+1. Segment the tongue using the U-Net model
+2. Analyze color, texture, and visual features
+3. Generate a health report with findings and recommendations
 
-* **Input:** Tongue image (JPG / PNG)
-* **Output:** Segmented tongue image
-* Saved in:
-
-  * `uploads/original/`
-  * `uploads/segmented/`
-
----
+**Note:** This tool provides visual analysis only and is not a medical diagnosis. Consult healthcare professionals for medical concerns.
 
