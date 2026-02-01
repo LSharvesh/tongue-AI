@@ -7,7 +7,6 @@ A web application for analyzing tongue images using deep learning segmentation a
 ### Deep Learning & AI
 - **U-Net** - Convolutional neural network for tongue image segmentation
 - **PyTorch** - Deep learning framework for model training and inference
-- **OpenAI Vision API** (optional) - AI-powered image analysis
 
 ### Computer Vision & Image Processing
 - **OpenCV** - Image processing, color space conversion, edge detection, and texture analysis
